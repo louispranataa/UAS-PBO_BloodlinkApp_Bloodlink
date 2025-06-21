@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.bloodlink.controllers.HospitalLoginController"
+           style="-fx-background-color: linear-gradient(to bottom right, #e0f7fa, #ffffff);">
+
+    <VBox spacing="15" alignment="CENTER"
+          style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 5);">
+        
+        <Label text="🏥 Hospital Login"
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #00796b;" />
+
+        <TextField fx:id="emailField" promptText="Email"
+                   style="-fx-pref-width: 250; -fx-font-size: 14px;" />
+        
+        <PasswordField fx:id="passwordField" promptText="Password"
+                       style="-fx-pref-width: 250; -fx-font-size: 14px;" />
+
+        <Button text="Login" onAction="#handleLogin"
+                style="-fx-background-color: #00796b; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+        <Separator />
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Register Hospital" onAction="#handleGoToRegister"
+                    style="-fx-background-color: #0288d1; -fx-text-fill: white;" />
+            <Button text="Login as Donor" onAction="#handleGoToDonorLogin"
+                    style="-fx-background-color: transparent; -fx-border-color: #0288d1; -fx-text-fill: #0288d1;" />
+        </HBox>
+    </VBox>
+</StackPane>

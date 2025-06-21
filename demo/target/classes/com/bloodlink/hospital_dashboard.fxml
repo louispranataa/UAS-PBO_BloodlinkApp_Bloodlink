@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.bloodlink.controllers.HospitalDashboardController"
+            style="-fx-background-color: linear-gradient(to bottom, #e3f2fd, #ffffff);">
+
+    <top>
+        <Label text="🏥 Hospital Dashboard - Blood Donations"
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0d47a1; -fx-padding: 15 0 10 20;" />
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="🩸 Scheduled Donations"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+
+            <TableView fx:id="tableView" prefHeight="300" prefWidth="900"
+                       style="-fx-background-color: white; -fx-border-radius: 5; -fx-background-radius: 5;">
+                <columns>
+                    <TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+                    <TableColumn fx:id="colDonorName" text="Donor" prefWidth="150"/>
+                    <TableColumn fx:id="colBloodType" text="Blood Type" prefWidth="100"/>
+                    <TableColumn fx:id="colCode" text="Code" prefWidth="130"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+                    <TableColumn fx:id="colUnitsInput" text="Units Donated" prefWidth="120"/>
+                    <TableColumn fx:id="colAction" text="Action" prefWidth="120"/>
+                </columns>
+            </TableView>
+
+            <Separator style="-fx-padding: 10 0 10 0;" />
+
+            <Label text="📦 Blood Supply Overview"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;" />
+
+            <TableView fx:id="tableBloodSupply" prefHeight="200" prefWidth="400"
+                       style="-fx-background-color: white; -fx-border-radius: 5; -fx-background-radius: 5;">
+                <columns>
+                    <TableColumn fx:id="colBloodTypeSupply" text="Blood Type" prefWidth="200"/>
+                    <TableColumn fx:id="colUnitsSupply" text="Units Available" prefWidth="200"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+</BorderPane>

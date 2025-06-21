@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.bloodlink.controllers.DonorDashboardController"
+           style="-fx-background-color: linear-gradient(to bottom right, #f0f8ff, #e6ffee);">
+
+    <VBox spacing="20" alignment="TOP_CENTER"
+      maxWidth="600"
+      style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 12, 0, 0, 4);">
+
+        <Label text="My Donation Schedule"
+            style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+        <Label fx:id="countdownLabel"
+            text="Next donation eligibility will appear here..."
+            style="-fx-font-size: 14px; -fx-text-fill: #e74c3c;" />
+
+        <TableView fx:id="tableView" prefHeight="300" style="-fx-background-radius: 8;">
+            <columns>
+                <TableColumn fx:id="colDate" text="Date" prefWidth="180"/>
+                <TableColumn fx:id="colHospital" text="Hospital" prefWidth="220"/>
+                <TableColumn fx:id="colCode" text="Code" prefWidth="160"/>
+            </columns>
+        </TableView>
+
+        <Button text="Create New Schedule" onAction="#handleCreateSchedule"
+                style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10 20;" />
+    </VBox>
+
+</StackPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.bloodlink.controllers.CreateScheduleController"
+           style="-fx-background-color: linear-gradient(to bottom right, #f5f9ff, #e3fff3);">
+
+    <VBox alignment="TOP_CENTER" spacing="20" maxWidth="600"
+          style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 12, 0, 0, 5);">
+
+        <Label text="Health Eligibility Check"
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+        <!-- Health Questions -->
+        <VBox spacing="10">
+            <CheckBox fx:id="infectiousDisease" text="I don't have HIV/AIDS, Hepatitis B/C, or Syphilis" />
+            <CheckBox fx:id="chronicIllness" text="I don't have uncontrolled diabetes, heart disease, or cancer" />
+            <CheckBox fx:id="pregnantOrPostpartum" text="I'm not currently pregnant and haven't given birth in the last 6 months" />
+            <CheckBox fx:id="recentSurgery" text="I haven't had major surgery in the last 6 months" />
+            <CheckBox fx:id="bloodPressureIssue" text="I have stable blood pressure" />
+            <CheckBox fx:id="recentDonation" text="I haven't donated blood in the last 8 weeks and I feel well" />
+        </VBox>
+
+        <Button fx:id="continueButton" onAction="#handleContinue" text="Continue to Scheduling"
+        style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 8 16;" />
+
+        <!-- Schedule Form -->
+        <VBox fx:id="scheduleForm" spacing="10" visible="false" managed="false">
+            <Label text="Schedule Your Donation" style="-fx-font-size: 16px;" />
+
+            <DatePicker fx:id="datePicker" promptText="Select a date">
+                <VBox.margin>
+                    <Insets top="5"/>
+                </VBox.margin>
+            </DatePicker>
+
+            <ComboBox fx:id="hospitalComboBox" promptText="Select Hospital" prefWidth="250" maxWidth="Infinity">
+                <VBox.margin>
+                    <Insets top="5"/>
+                </VBox.margin>
+            </ComboBox>
+
+            <Button text="Submit Schedule" onAction="#handleSubmit" style="-fx-background-color: #007bff; -fx-text-fill: white;" />
+        </VBox>
+
+
+    </VBox>
+</StackPane>
